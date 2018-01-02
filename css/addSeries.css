@@ -1,0 +1,95 @@
+body{
+	font-family: Nunito;
+	background: #EDEDED;
+}
+.wrapper{
+	
+	width: 70%;
+	box-shadow: 0px 5px 3px #E0E0E0;
+	border-radius: 4px;
+	margin: auto auto;
+	background-color: white;
+	padding: 1em;	
+	margin-bottom: 5px;
+	position: relative;	
+}
+
+h3{
+	font-size: 25px;
+	color: rgb(180,0,0);
+	text-shadow: 2px 2px 0px #E0E0E0;
+}
+.inputbar{
+
+	padding: 5px 10px;
+	border-radius: 3px;
+	border:1px solid grey;
+	text-align: center;
+	margin: 0;
+	font-family: Nunito;
+}
+
+.inputbarsearch{
+	border-radius: 3px;
+	border:1px solid grey;
+	text-align: center;
+	font-family: Nunito;
+	width: 50%;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+.buttonbar{
+
+	padding: 4px 2em;
+	background-color: white;
+	border:1px solid grey;
+	color: grey;
+	border-radius: 3px;	
+	border-bottom: 5px solid grey;
+	font-family: Nunito;
+}
+
+.buttonbar:hover{		
+	background: linear-gradient(rgb(229,30,25),rgb(230,40,30),rgb(200,20,20));
+	border: 1px solid rgb(180,0,0);
+	color: white;
+	border-bottom: 5px solid rgb(180,0,0);
+}
+.delbtn{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	padding: 4px 2em;
+	background-color: white;
+	border:1px solid grey;
+	color: grey;
+	border-radius: 3px;	
+	border-bottom: 5px solid grey;
+	font-family: Nunito;	
+}
+
+.delbtn:hover{
+	background: linear-gradient(rgb(229,30,25),rgb(230,40,30),rgb(200,20,20));
+	border: 1px solid rgb(180,0,0);
+	color: white;
+	border-bottom: 5px solid rgb(180,0,0);
+}
+.itemList{
+
+	background: #EDEDED;
+	padding: 2em;	
+	box-shadow: 0px 5px 3px #E0E0E0;
+}
+
+.item{
+
+	box-shadow: 0px 5px 3px #E0E0E0;
+	background-color: white;
+	margin-bottom: 5px;
+	border-radius: 3px;
+	padding: 10px;
+	overflow: hidden;
+	position: relative;
+	
+}

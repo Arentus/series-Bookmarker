@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>	
+
+	<!-- Author: Robwert Mota (Arentus) -->
+	<!-- a simple practice with vanilla Javascript date : 02/01/2018 -->
+
+	<meta charset="UTF-8">
+	<title>Practice with PURE JS and DOM</title>
+	<link rel="stylesheet" href="css/addSeries.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+</head>
+	
+<body>
+	
+	<div class="wrapper">
+		<input type="text" class="inputbarsearch" id="filter" placeholder="You can search your series here...">
+	</div>
+
+	<div class="wrapper">
+		
+		<h3><i class="fa fa-check-circle-o" aria-hidden="true"></i>Add your Favorite Series...</h3>
+
+		<form action="#">
+			<input type="text" id="nameSerie" class="inputbar" placeholder="Type one serie to add...">
+			<input type="submit" id="btn1" class="buttonbar" value="Add!"></input>		
+		</form>
+
+		<ol id="itemList" class="itemList">
+			<li class="item">Breaking Bad <button class="delbtn">X</button></li>
+			<li class="item">Game of Thrones <button class="delbtn">X</button></li>
+			<li class="item">Neon Genesis Evangelion <button class="delbtn">X</button></li>
+		</ol>
+	</div>
+	
+	
+	<script>
+		
+		// add Event
+		
+		var btn1 = document.getElementById("btn1");
+			
+		btn1.addEventListener("click",addSerie);
+
+		// remove Event
+
+		var itemList = document.getElementById("itemList");
+		
+		itemList.addEventListener("click",removeItem);
+
+		//Filter Event
+
+		var filter = document.getElementById("filter");
+
+		filter.addEventListener("keyup",filterElements);
+
+		function addSerie(event){
+
+			event.preventDefault();
+			
+			var li = document.createElement("li");
+			
+			var nameSerie = document.getElementById("nameSerie").value;
+
+			li.appendChild(document.createTextNode(nameSerie));
+			
+			li.className = 'item';
+
+			var delbtn = document.createElement("button");
+
+			delbtn.className = 'delbtn';
+
+			var x = document.createTextNode("X");
+			
+			delbtn.appendChild(x);
+
+			itemList.appendChild(li);
+
+			li.appendChild(delbtn);
+		}
+
+		function removeItem(e){
+			
+			if(e.target.classList.contains('delbtn')){
+				if(confirm('Are you sure?')){
+
+					var li = e.target.parentElement;
+					itemList.removeChild(li);
+				}
+			}
+
+		}
+
+		function filterElements(e){
+
+			var text = e.target.value.toLowerCase(); // get the text and transform to lower case
+
+			var items = itemList.getElementsByTagName('li');
+
+			//get collection of li html
+
+			Array.from(items).forEach(function(item){
+				
+				var itemName = item.firstChild.textContent;
+				
+				if(itemName.toLowerCase().indexOf(text) != -1){
+
+					item.style.display = 'block';
+
+				}else{
+					item.style.display = 'none';
+				}
+			});
+
+		}
+	</script>
+
+	<footer>
+		
+		<p align="center"><small>Develop by <strong>Robwert Mota</strong> 2018</small></p>
+	</footer>
+</body>
+</html>
